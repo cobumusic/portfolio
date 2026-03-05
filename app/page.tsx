@@ -1,10 +1,10 @@
 import Nav from "../src/components/Nav/Nav";
-import Hero from "../src/components/Hero/Hero";
-import About from "../src/components/About/About";
-import Experience from "../src/components/Experience/Experience";
-import Skills from "../src/components/Skills/Skills";
-import Work from "../src/components/Work/Work";
-import Contact from "../src/components/Contact/Contact";
+import HeroSection from "../src/components/sections/HeroSection/HeroSection";
+import AboutSection from "../src/components/sections/AboutSection/AboutSection";
+import ExperienceSection from "../src/components/sections/ExperienceSection/ExperienceSection";
+import SkillsSection from "../src/components/sections/SkillsSection/SkillsSection";
+import WorkSection from "../src/components/sections/WorkSection/WorkSection";
+import ContactSection from "../src/components/sections/ContactSection/ContactSection";
 import Footer from "../src/components/Footer/Footer";
 
 export default function Home() {
@@ -12,12 +12,12 @@ export default function Home() {
     <>
       <Nav />
       <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Work />
-        <Contact />
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection />
+        <SkillsSection />
+        <WorkSection />
+        <ContactSection />
       </main>
       <Footer />
     </>

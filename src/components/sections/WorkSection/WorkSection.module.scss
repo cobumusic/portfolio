@@ -1,0 +1,15 @@
+@use '../../../styles/variables' as *;
+
+.work {
+  background: var(--bg-primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+
+  @include respond-to(sm) {
+    grid-template-columns: 1fr;
+  }
+}

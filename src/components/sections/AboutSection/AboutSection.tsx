@@ -2,7 +2,7 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import css from './About.module.scss'
+import css from './AboutSection.module.scss'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,7 +16,7 @@ const STATS = [
 /**
  * About section with a brief bio and key career stats.
  */
-export default function About() {
+export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useLayoutEffect(() => {
