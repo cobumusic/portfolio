@@ -1,0 +1,113 @@
+@use './variables' as *;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #{$bg-primary};
+  --bg-secondary: #{$bg-secondary};
+  --bg-card: #{$bg-card};
+  --accent: #{$accent};
+  --accent-dim: #{$accent-dim};
+  --accent-bright: #{$accent-bright};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-muted: #{$text-muted};
+  --border: #{$border};
+  --radius: 12px;
+  --radius-sm: 6px;
+  --section-padding: clamp(5rem, 10vw, 9rem);
+  --max-width: 1100px;
+  --nav-height: 72px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-body;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.section {
+  padding: var(--section-padding) max(1.5rem, calc((100% - var(--max-width)) / 2));
+
+  &__label {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+
+    span {
+      color: var(--accent);
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 560px;
+    margin-bottom: 3.5rem;
+    line-height: 1.7;
+  }
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.35);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 3px;
+}

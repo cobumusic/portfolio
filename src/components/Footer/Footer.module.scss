@@ -1,0 +1,37 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  padding: 2rem max(1.5rem, calc((100% - var(--max-width)) / 2));
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @include respond-to(sm) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text-secondary);
+  }
+}
