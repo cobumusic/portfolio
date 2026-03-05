@@ -1,13 +1,17 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
+'use client'
+import { useLayoutEffect, useRef, useState, type FormEvent } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import css from './Contact.module.scss'
 
 gsap.registerPlugin(ScrollTrigger)
 
+// Sign up at formspree.io, create a form, and replace this with your form ID.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
+
 /**
- * Contact section with a Netlify Forms-powered form. No email address is exposed.
- * Submissions are viewable in the Netlify dashboard under Forms > contact.
+ * Contact section with a Formspree-powered form. No email address is exposed.
+ * Submissions are forwarded to your email via Formspree (formspree.io).
  */
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -35,7 +39,7 @@ export default function Contact() {
     return () => ctx.revert()
   }, [])
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('sending')
 
@@ -43,10 +47,10 @@ export default function Contact() {
     const data = new FormData(form)
 
     try {
-      const res = await fetch('/', {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+        body: data,
+        headers: { Accept: 'application/json' },
       })
 
       if (res.ok) {
@@ -87,18 +91,7 @@ export default function Contact() {
             Message received — I&apos;ll be in touch soon!
           </div>
         ) : (
-          /* data-netlify="true" enables Netlify Forms on deployment */
-          <form
-            className={css.form}
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            onSubmit={handleSubmit}
-            data-reveal
-          >
-            {/* Required hidden field for Netlify Forms */}
-            <input type="hidden" name="form-name" value="contact" />
-
+          <form className={css.form} onSubmit={handleSubmit} data-reveal>
             <div className={css.row}>
               <div className={css.field}>
                 <label className={css.label} htmlFor="name">Name</label>
@@ -131,7 +124,7 @@ export default function Contact() {
                 id="subject"
                 name="subject"
                 type="text"
-                placeholder="What&apos;s this about?"
+                placeholder="What's this about?"
               />
             </div>
 
@@ -141,7 +134,7 @@ export default function Contact() {
                 className={css.textarea}
                 id="message"
                 name="message"
-                placeholder="Tell me what you&apos;re working on..."
+                placeholder="Tell me what you're working on..."
                 required
               />
             </div>

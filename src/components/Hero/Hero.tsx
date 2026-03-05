@@ -1,4 +1,5 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react'
+'use client'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import css from './Hero.module.scss'
 
