@@ -1,13 +1,13 @@
-'use client'
-import css from './Footer.module.scss'
+"use client";
+import css from "./Footer.module.scss";
 
 /**
  * Minimal site footer with copyright and quick navigation links.
  */
 export default function Footer() {
   const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
+    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <footer className={css.footer}>
@@ -16,10 +16,10 @@ export default function Footer() {
       </p>
       <nav className={css.links}>
         {[
-          ['About', '#about'],
-          ['Experience', '#experience'],
-          ['Work', '#work'],
-          ['Contact', '#contact'],
+          ["About", "#about"],
+          ["Experience", "#experience"],
+          ["Work", "#work"],
+          ["Contact", "#contact"],
         ].map(([label, href]) => (
           <span
             key={href}
@@ -27,12 +27,12 @@ export default function Footer() {
             onClick={() => scrollTo(href)}
             role="button"
             tabIndex={0}
-            onKeyDown={e => e.key === 'Enter' && scrollTo(href)}
+            onKeyDown={(e) => e.key === "Enter" && scrollTo(href)}
           >
             {label}
           </span>
         ))}
       </nav>
     </footer>
-  )
+  );
 }

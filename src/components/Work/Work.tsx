@@ -1,108 +1,111 @@
-'use client'
-import { useLayoutEffect, useRef } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import css from './Work.module.scss'
+"use client";
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import css from "./Work.module.scss";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 interface Project {
-  type: string
-  title: string
-  description: string
-  tech: string[]
+  type: string;
+  title: string;
+  description: string;
+  tech: string[];
   /** Relative path under /images/ — leave undefined to show placeholder */
-  image?: string
-  link?: string
+  image?: string;
+  link?: string;
 }
 
 // Add projects here. Drop screenshots into /public/images/ and set the `image` field.
 const PROJECTS: Project[] = [
   {
-    type: 'AI Platform',
-    title: 'SymbyAI — Research Platform',
+    type: "AI Platform",
+    title: "SymbyAI — Research Platform",
     description:
-      'Core web application for an AI-driven platform automating peer review. Built end-to-end user flows for paper uploading, AI-assisted analysis, team review, org management, and topic-based discovery.',
-    tech: ['TypeScript', 'React', 'SCSS', 'Stripe', 'RESTful API', 'Mixpanel'],
+      "Core web application for an AI-driven platform automating peer review. Built end-to-end user flows for paper uploading, AI-assisted analysis, team review, org management, and topic-based discovery.",
+    tech: ["TypeScript", "React", "SCSS", "Stripe", "RESTful API", "Mixpanel"],
   },
   {
-    type: 'Creative Tech',
-    title: 'MSG Sphere Content Pipelines',
+    type: "Creative Tech",
+    title: "MSG Sphere Content Pipelines",
     description:
-      'Interactive tooling and visual content libraries for the Las Vegas Sphere, enabling 100+ brands and artists to preview and customize content for the world\'s largest LED display.',
-    tech: ['Unreal Engine', 'JavaScript', 'Python', 'C++', 'Blueprints'],
+      "Interactive tooling and visual content libraries for the Las Vegas Sphere, enabling 100+ brands and artists to preview and customize content for the world's largest LED display.",
+    tech: ["Unreal Engine", "JavaScript", "Python", "C++", "Blueprints"],
   },
   {
-    type: 'Web Platform',
-    title: 'idobi Network Redesign',
+    type: "Web Platform",
+    title: "idobi Network Redesign",
     description:
-      'Complete site overhaul for a 3M+ visitor/month internet radio station — custom radio players, rebuilt WordPress plugins, expanded ad inventory, and boosted revenue by 45%.',
-    tech: ['React', 'JavaScript', 'PHP', 'WordPress', 'HTML/CSS'],
+      "Complete site overhaul for a 3M+ visitor/month internet radio station — custom radio players, rebuilt WordPress plugins, expanded ad inventory, and boosted revenue by 45%.",
+    tech: ["React", "JavaScript", "PHP", "WordPress", "HTML/CSS"],
   },
   {
-    type: 'Interactive Exhibit',
-    title: 'WNBA Phoenix Conference',
+    type: "Interactive Exhibit",
+    title: "WNBA Phoenix Conference",
     description:
-      'Solo-developed an interactive exhibit for the WNBA Phoenix conference that generated ~2,000 interactions over 2 days using custom hardware and real-time visual programming.',
-    tech: ['Python', 'TouchDesigner', 'Hardware Integration'],
+      "Solo-developed an interactive exhibit for the WNBA Phoenix conference that generated ~2,000 interactions over 2 days using custom hardware and real-time visual programming.",
+    tech: ["Python", "TouchDesigner", "Hardware Integration"],
   },
   {
-    type: 'Mobile App',
-    title: 'Dressertation',
+    type: "Mobile App",
+    title: "Dressertation",
     description:
-      'Early-stage mobile app enabling users to scan wardrobes and receive AI-generated outfit suggestions. Designed in Figma, built in Android Studio.',
-    tech: ['Java', 'Kotlin', 'XML', 'Android Studio', 'Figma'],
+      "Early-stage mobile app enabling users to scan wardrobes and receive AI-generated outfit suggestions. Designed in Figma, built in Android Studio.",
+    tech: ["Java", "Kotlin", "XML", "Android Studio", "Figma"],
   },
   {
-    type: 'Defense / Data Viz',
-    title: 'General Atomics Internal Tools',
+    type: "Defense / Data Viz",
+    title: "General Atomics Internal Tools",
     description:
-      'Full-stack B2B tools for live database visualization and AI error-prediction dashboards, cutting fatal error rates by 40% and saving $340K annually.',
-    tech: ['Python', 'JavaScript', 'SQL', 'Data Visualization'],
+      "Full-stack B2B tools for live database visualization and AI error-prediction dashboards, cutting fatal error rates by 40% and saving $340K annually.",
+    tech: ["Python", "JavaScript", "SQL", "Data Visualization"],
   },
-]
+];
 
 /**
  * Work section displaying a grid of project cards.
  * Add screenshots by placing images in /public/images/ and setting the `image` field on each project.
  */
 export default function Work() {
-  const sectionRef = useRef<HTMLElement>(null)
+  const sectionRef = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        sectionRef.current!.querySelectorAll('[data-reveal]'),
+        sectionRef.current!.querySelectorAll("[data-reveal]"),
         { opacity: 0, y: 24 },
         {
           opacity: 1,
           y: 0,
           stagger: 0.09,
           duration: 0.6,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 72%',
+            start: "top 72%",
           },
         },
-      )
-    }, sectionRef)
+      );
+    }, sectionRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section id="work" className={`section ${css.work}`} ref={sectionRef}>
-      <p className="section__label" data-reveal>Work</p>
+      <p className="section__label" data-reveal>
+        Work
+      </p>
       <h2 className="section__title" data-reveal>
         Selected <span>projects</span>
       </h2>
       <p className="section__subtitle" data-reveal>
-        A selection of the platforms, tools, and experiences I&apos;ve shipped across industries.
+        A selection of the platforms, tools, and experiences I&apos;ve shipped
+        across industries.
       </p>
 
       <div className={css.grid}>
-        {PROJECTS.map(project => (
+        {PROJECTS.map((project) => (
           <div className={css.card} key={project.title} data-reveal>
             <div className={css.thumbnail}>
               {project.image ? (
@@ -134,8 +137,10 @@ export default function Work() {
               <h3 className={css.cardTitle}>{project.title}</h3>
               <p className={css.cardDesc}>{project.description}</p>
               <div className={css.tech}>
-                {project.tech.map(t => (
-                  <span className={css.techTag} key={t}>{t}</span>
+                {project.tech.map((t) => (
+                  <span className={css.techTag} key={t}>
+                    {t}
+                  </span>
                 ))}
               </div>
 
@@ -147,7 +152,13 @@ export default function Work() {
                   rel="noopener noreferrer"
                 >
                   View project
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden="true"
+                  >
                     <path d="M7 17L17 7M17 7H7M17 7v10" />
                   </svg>
                 </a>
@@ -159,5 +170,5 @@ export default function Work() {
         ))}
       </div>
     </section>
-  )
+  );
 }

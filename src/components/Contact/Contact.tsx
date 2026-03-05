@@ -1,68 +1,70 @@
-'use client'
-import { useLayoutEffect, useRef, useState, type FormEvent } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import css from './Contact.module.scss'
+"use client";
+import { useLayoutEffect, useRef, useState, type FormEvent } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import css from "./Contact.module.scss";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 // Sign up at formspree.io, create a form, and replace this with your form ID.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqpwalg";
 
 /**
  * Contact section with a Formspree-powered form. No email address is exposed.
  * Submissions are forwarded to your email via Formspree (formspree.io).
  */
 export default function Contact() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const sectionRef = useRef<HTMLElement>(null);
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        sectionRef.current!.querySelectorAll('[data-reveal]'),
+        sectionRef.current!.querySelectorAll("[data-reveal]"),
         { opacity: 0, y: 22 },
         {
           opacity: 1,
           y: 0,
           stagger: 0.08,
           duration: 0.6,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 72%',
+            start: "top 72%",
           },
         },
-      )
-    }, sectionRef)
+      );
+    }, sectionRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setStatus('sending')
+    e.preventDefault();
+    setStatus("sending");
 
-    const form = e.currentTarget
-    const data = new FormData(form)
+    const form = e.currentTarget;
+    const data = new FormData(form);
 
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
+        method: "POST",
         body: data,
-        headers: { Accept: 'application/json' },
-      })
+        headers: { Accept: "application/json" },
+      });
 
       if (res.ok) {
-        setStatus('success')
-        form.reset()
+        setStatus("success");
+        form.reset();
       } else {
-        setStatus('error')
+        setStatus("error");
       }
     } catch {
-      setStatus('error')
+      setStatus("error");
     }
-  }
+  };
 
   return (
     <section id="contact" className={`section ${css.contact}`} ref={sectionRef}>
@@ -74,8 +76,8 @@ export default function Contact() {
           </h2>
           <p>
             I&apos;m currently open to front-end and full-stack roles. Whether
-            you have a specific opportunity or just want to talk about a
-            project — I&apos;d love to hear from you.
+            you have a specific opportunity or just want to talk about a project
+            — I&apos;d love to hear from you.
           </p>
           <p>
             I typically respond within a day or two. Looking forward to
@@ -83,9 +85,17 @@ export default function Contact() {
           </p>
         </div>
 
-        {status === 'success' ? (
+        {status === "success" ? (
           <div className={css.success} data-reveal>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
               <path d="M20 6L9 17l-5-5" />
             </svg>
             Message received — I&apos;ll be in touch soon!
@@ -94,7 +104,9 @@ export default function Contact() {
           <form className={css.form} onSubmit={handleSubmit} data-reveal>
             <div className={css.row}>
               <div className={css.field}>
-                <label className={css.label} htmlFor="name">Name</label>
+                <label className={css.label} htmlFor="name">
+                  Name
+                </label>
                 <input
                   className={css.input}
                   id="name"
@@ -105,7 +117,9 @@ export default function Contact() {
                 />
               </div>
               <div className={css.field}>
-                <label className={css.label} htmlFor="email">Email</label>
+                <label className={css.label} htmlFor="email">
+                  Email
+                </label>
                 <input
                   className={css.input}
                   id="email"
@@ -118,7 +132,9 @@ export default function Contact() {
             </div>
 
             <div className={css.field}>
-              <label className={css.label} htmlFor="subject">Subject</label>
+              <label className={css.label} htmlFor="subject">
+                Subject
+              </label>
               <input
                 className={css.input}
                 id="subject"
@@ -129,7 +145,9 @@ export default function Contact() {
             </div>
 
             <div className={css.field}>
-              <label className={css.label} htmlFor="message">Message</label>
+              <label className={css.label} htmlFor="message">
+                Message
+              </label>
               <textarea
                 className={css.textarea}
                 id="message"
@@ -139,22 +157,23 @@ export default function Contact() {
               />
             </div>
 
-            {status === 'error' && (
+            {status === "error" && (
               <p className={css.error}>
-                Something went wrong. Please try again or reach out via LinkedIn.
+                Something went wrong. Please try again or reach out via
+                LinkedIn.
               </p>
             )}
 
             <button
               className={css.submit}
               type="submit"
-              disabled={status === 'sending'}
+              disabled={status === "sending"}
             >
-              {status === 'sending' ? 'Sending...' : 'Send message'}
+              {status === "sending" ? "Sending..." : "Send message"}
             </button>
           </form>
         )}
       </div>
     </section>
-  )
+  );
 }
