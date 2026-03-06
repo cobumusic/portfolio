@@ -5,6 +5,7 @@ import css from "./Nav.module.scss";
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
   { label: "Work", href: "#work" },
   { label: "Contact", href: "#contact" },
 ];

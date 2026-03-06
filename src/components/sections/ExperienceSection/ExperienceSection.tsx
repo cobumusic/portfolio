@@ -73,16 +73,6 @@ const FREELANCE: ExperienceItem[] = [
     ],
   },
   {
-    company: "Dressertation",
-    role: "Front-End Developer",
-    period: "2024",
-    location: "Remote",
-    bullets: [
-      "Developed an early-stage mobile app for wardrobe scanning and AI-generated outfit suggestions using Android Studio, Java, Kotlin, and XML.",
-      "Drove redesign from Figma and paper prototypes through beta implementation and Bitbucket merge into the production app.",
-    ],
-  },
-  {
     company: "Delite! Media & Others",
     role: "Freelance Web Developer",
     period: "2020 – 2021",
