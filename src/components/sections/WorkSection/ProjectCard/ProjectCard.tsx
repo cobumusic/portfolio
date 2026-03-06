@@ -1,16 +1,16 @@
-import css from './ProjectCard.module.scss'
+import css from "./ProjectCard.module.scss";
 
 /**
  * Shape of a single portfolio project.
  */
 export interface Project {
-  type: string
-  title: string
-  description: string
-  tech: string[]
+  type: string;
+  title: string;
+  description: string;
+  tech: string[];
   /** Relative path under /images/ — leave undefined to show placeholder */
-  image?: string
-  link?: string
+  image?: string;
+  link?: string;
 }
 
 /**
@@ -81,5 +81,5 @@ export default function ProjectCard({ project }: { project: Project }) {
         )}
       </div>
     </div>
-  )
+  );
 }

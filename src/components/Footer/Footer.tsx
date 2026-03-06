@@ -12,7 +12,8 @@ export default function Footer() {
   return (
     <footer className={css.footer}>
       <p className={css.copy}>
-        &copy; {new Date().getFullYear()} Jacob. Built with React &amp; GSAP.
+        &copy; {new Date().getFullYear()} Jacob Ugalde. Built with React &amp;
+        GSAP.
       </p>
       <nav className={css.links}>
         {[

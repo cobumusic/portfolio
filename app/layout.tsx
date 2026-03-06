@@ -22,13 +22,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jacob | Front-End & Full-Stack Engineer",
+  title: "Jacob | Software Developer",
   description:
-    "Front-End & Full-Stack Engineer specializing in React, TypeScript, and modern web technologies.",
+    "Software Developer specializing in React, TypeScript, and modern web technologies.",
   openGraph: {
-    title: "Jacob | Front-End & Full-Stack Engineer",
+    title: "Jacob | Software Developer",
     description:
-      "Front-End & Full-Stack Engineer specializing in React, TypeScript, and modern web technologies.",
+      "Software Developer specializing in React, TypeScript, and modern web technologies.",
     type: "website",
   },
 };

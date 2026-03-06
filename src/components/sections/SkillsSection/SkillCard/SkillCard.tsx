@@ -1,12 +1,12 @@
-import css from './SkillCard.module.scss'
+import css from "./SkillCard.module.scss";
 
 /**
  * Props for SkillCard.
  */
 interface SkillCardProps {
-  icon: string
-  name: string
-  tags: string[]
+  icon: string;
+  name: string;
+  tags: string[];
 }
 
 /**
@@ -29,5 +29,5 @@ export default function SkillCard({ icon, name, tags }: SkillCardProps) {
         ))}
       </div>
     </div>
-  )
+  );
 }

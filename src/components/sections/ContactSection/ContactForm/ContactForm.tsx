@@ -1,43 +1,45 @@
-'use client'
-import { useState, type FormEvent } from 'react'
-import css from './ContactForm.module.scss'
+"use client";
+import { useState, type FormEvent } from "react";
+import css from "./ContactForm.module.scss";
 
 // Sign up at formspree.io, create a form, and replace this with your form ID.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xaqpwalg'
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xaqpwalg";
 
 /**
  * Formspree-powered contact form with inline success and error states.
  * Submissions are forwarded to your email via Formspree (formspree.io).
  */
 export default function ContactForm() {
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setStatus('sending')
+    e.preventDefault();
+    setStatus("sending");
 
-    const form = e.currentTarget
-    const data = new FormData(form)
+    const form = e.currentTarget;
+    const data = new FormData(form);
 
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
+        method: "POST",
         body: data,
-        headers: { Accept: 'application/json' },
-      })
+        headers: { Accept: "application/json" },
+      });
 
       if (res.ok) {
-        setStatus('success')
-        form.reset()
+        setStatus("success");
+        form.reset();
       } else {
-        setStatus('error')
+        setStatus("error");
       }
     } catch {
-      setStatus('error')
+      setStatus("error");
     }
-  }
+  };
 
-  if (status === 'success') {
+  if (status === "success") {
     return (
       <div className={css.success} data-reveal>
         <svg
@@ -53,7 +55,7 @@ export default function ContactForm() {
         </svg>
         Message received — I&apos;ll be in touch soon!
       </div>
-    )
+    );
   }
 
   return (
@@ -113,7 +115,7 @@ export default function ContactForm() {
         />
       </div>
 
-      {status === 'error' && (
+      {status === "error" && (
         <p className={css.error}>
           Something went wrong. Please try again or reach out via LinkedIn.
         </p>
@@ -122,10 +124,10 @@ export default function ContactForm() {
       <button
         className={css.submit}
         type="submit"
-        disabled={status === 'sending'}
+        disabled={status === "sending"}
       >
-        {status === 'sending' ? 'Sending...' : 'Send message'}
+        {status === "sending" ? "Sending..." : "Send message"}
       </button>
     </form>
-  )
+  );
 }

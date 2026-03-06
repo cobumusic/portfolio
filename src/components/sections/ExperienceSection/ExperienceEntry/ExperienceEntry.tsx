@@ -1,14 +1,14 @@
-import css from './ExperienceEntry.module.scss'
+import css from "./ExperienceEntry.module.scss";
 
 /**
  * Shape of a single job entry in the experience timeline.
  */
 export interface ExperienceItem {
-  company: string
-  role: string
-  period: string
-  location: string
-  bullets: string[]
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  bullets: string[];
 }
 
 /**
@@ -33,5 +33,5 @@ export default function ExperienceEntry({ item }: { item: ExperienceItem }) {
         ))}
       </ul>
     </div>
-  )
+  );
 }
