@@ -44,13 +44,7 @@ const SKILL_CATEGORIES = [
   {
     icon: "🎨",
     name: "Design & Creative",
-    tags: [
-      "Adobe Creative Suite",
-      "Figma",
-      "Unreal Engine",
-      "TouchDesigner",
-      "Motion Graphics",
-    ],
+    tags: ["Adobe Creative Suite", "Figma", "Unreal Engine", "TouchDesigner"],
   },
   {
     icon: "🔄",
