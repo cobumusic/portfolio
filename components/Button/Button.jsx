@@ -55,88 +55,84 @@ export const BUTTON_SIZES = {
  * @param variant    - [optional] Controls the button styling (default: BUTTON_VARIANTS.RAISED)
  * @param wrap       - [optional] If true, allows text wrapping inside the button (default: false)
  */
-export default forwardRef(
-  (
-    {
-      children,
-      className = "",
-      danger = false,
-      dark = false,
-      dataTestId = "",
-      disabled = false,
-      ghost = false,
-      helperText = null,
-      href = "",
-      icon = null,
-      iconLeft = null,
-      large = false,
-      loading = false,
-      onClick = null,
-      prefetch = true,
-      size = BUTTON_SIZES.REGULAR,
-      target = "_self",
-      type = "button",
-      variant = BUTTON_VARIANTS.RAISED,
-      wrap = false,
-    },
-    ref,
-  ) => {
-    const isGhost = ghost || variant === BUTTON_VARIANTS.GHOST;
-    const isLarge = large || size === BUTTON_SIZES.LARGE;
-    const isSmall = size === BUTTON_SIZES.SMALL;
-    const isText = variant === BUTTON_VARIANTS.TEXT;
+export default forwardRef(({
+  children,
+  className = "",
+  danger = false,
+  dark = false,
+  dataTestId = "",
+  disabled = false,
+  ghost = false,
+  helperText = null,
+  href = "",
+  icon = null,
+  iconLeft = null,
+  large = false,
+  loading = false,
+  onClick = null,
+  prefetch = true,
+  size = BUTTON_SIZES.REGULAR,
+  target = "_self",
+  type = "button",
+  variant = BUTTON_VARIANTS.RAISED,
+  wrap = false,
+},
+ref) => {
+  const isGhost = ghost || variant === BUTTON_VARIANTS.GHOST;
+  const isLarge = large || size === BUTTON_SIZES.LARGE;
+  const isSmall = size === BUTTON_SIZES.SMALL;
+  const isText = variant === BUTTON_VARIANTS.TEXT;
 
-    let fullClassName = `custom ${className} ${css.button}`;
-    fullClassName += danger ? ` ${css.danger}` : "";
-    fullClassName += dark ? ` ${css.dark}` : "";
-    fullClassName += disabled ? ` ${css.disabled}` : "";
-    fullClassName += isGhost ? ` ${css.ghost}` : "";
-    fullClassName += icon ? ` ${css.icon}` : "";
-    fullClassName += isLarge ? ` ${css.large}` : "";
-    fullClassName += loading ? ` ${css.loading}` : "";
-    fullClassName += isSmall ? ` ${css.small}` : "";
-    fullClassName += isText ? ` ${css.text}` : "";
-    fullClassName += wrap ? ` ${css.wrap}` : "";
+  let fullClassName = `custom ${className} ${css.button}`;
+  fullClassName += danger ? ` ${css.danger}` : "";
+  fullClassName += dark ? ` ${css.dark}` : "";
+  fullClassName += disabled ? ` ${css.disabled}` : "";
+  fullClassName += isGhost ? ` ${css.ghost}` : "";
+  fullClassName += icon ? ` ${css.icon}` : "";
+  fullClassName += isLarge ? ` ${css.large}` : "";
+  fullClassName += loading ? ` ${css.loading}` : "";
+  fullClassName += isSmall ? ` ${css.small}` : "";
+  fullClassName += isText ? ` ${css.text}` : "";
+  fullClassName += wrap ? ` ${css.wrap}` : "";
 
-    //log click event and call onClick handler
-    function handleClick(e) {
-      if (onClick && !loading) {
-        onClick(e);
-      }
+  //log click event and call onClick handler
+  function handleClick(e) {
+    if (onClick && !loading) {
+      onClick(e);
     }
+  }
 
-    if (href) {
-      return (
-        <Link
-          href={href}
-          className={fullClassName}
-          onClick={handleClick}
-          target={target}
-          prefetch={prefetch}
-          ref={ref}
-          aria-disabled={disabled}
-          data-testid={dataTestId}
-        >
-          <ButtonInner icon={icon} iconLeft={iconLeft} helperText={helperText}>
-            {children}
-          </ButtonInner>
-        </Link>
-      );
-    }
-
+  if (href) {
     return (
-      <button
+      <Link
+        href={href}
         className={fullClassName}
         onClick={handleClick}
+        target={target}
+        prefetch={prefetch}
         ref={ref}
-        type={type}
-        disabled={disabled}
+        aria-disabled={disabled}
         data-testid={dataTestId}
       >
         <ButtonInner icon={icon} iconLeft={iconLeft} helperText={helperText}>
           {children}
         </ButtonInner>
-      </button>
+      </Link>
     );
-  },
-);
+  }
+
+  return (
+    <button
+      className={fullClassName}
+      onClick={handleClick}
+      ref={ref}
+      type={type}
+      disabled={disabled}
+      data-testid={dataTestId}
+    >
+      <ButtonInner icon={icon} iconLeft={iconLeft} helperText={helperText}>
+        {children}
+      </ButtonInner>
+    </button>
+  );
+});

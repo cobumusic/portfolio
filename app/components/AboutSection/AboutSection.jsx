@@ -11,15 +11,12 @@ function animate(root) {
   tl.set(root.querySelectorAll(".initialInvis"), { visibility: "visible" });
 
   //Fade in heading
-  tl.fromTo(
-    root.querySelector("h2"),
+  tl.fromTo(root.querySelector("h2"),
     { opacity: 0, translateY: "-15%" },
-    { opacity: 1, translateY: "0%", ease: "sine.inOut", duration: 0.2 },
-  );
+    { opacity: 1, translateY: "0%", ease: "sine.inOut", duration: 0.2 });
 
   //Stagger in text spans
-  tl.fromTo(
-    root.querySelectorAll(`.${css.text} span`),
+  tl.fromTo(root.querySelectorAll(`.${css.text} span`),
     { opacity: 0, translateY: "-15%" },
     {
       opacity: 1,
@@ -28,23 +25,18 @@ function animate(root) {
       stagger: 0.01,
       duration: 0.1,
     },
-    "<70%",
-  );
+    "<70%");
 
   //Fade in contact links
-  tl.fromTo(
-    root.querySelectorAll(`.${css.contact} > *`),
+  tl.fromTo(root.querySelectorAll(`.${css.contact} > *`),
     { opacity: 0 },
-    { opacity: 1, ease: "sine.inOut", duration: 0.2, stagger: 0.05 },
-  );
+    { opacity: 1, ease: "sine.inOut", duration: 0.2, stagger: 0.05 });
 
   //Fade in email button
-  tl.fromTo(
-    root.querySelectorAll(`.${css.button}`),
+  tl.fromTo(root.querySelectorAll(`.${css.button}`),
     { opacity: 0 },
     { opacity: 1, ease: "sine.inOut", duration: 0.2 },
-    "<90%",
-  );
+    "<90%");
 
   return tl;
 }

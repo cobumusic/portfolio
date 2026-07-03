@@ -23,11 +23,9 @@ function animateHeader(root) {
 
   tl.set(root.querySelectorAll(".initialInvis"), { visibility: "visible" });
 
-  tl.fromTo(
-    root.querySelector("h2"),
+  tl.fromTo(root.querySelector("h2"),
     { opacity: 0, translateY: "-15%" },
-    { opacity: 1, translateY: "0%", ease: "sine.inOut", duration: 0.2 },
-  );
+    { opacity: 1, translateY: "0%", ease: "sine.inOut", duration: 0.2 });
 
   return tl;
 }
