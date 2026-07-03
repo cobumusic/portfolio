@@ -1,0 +1,30 @@
+.chip{
+  display: inline-flex;
+  gap: var(--spacing3);
+  align-items: center;
+  padding: var(--spacing4) var(--spacing5);
+
+  color: var(--black);
+  font-size: var(--fontSize1);
+}
+
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 1.618em;
+
+  svg{
+    width: 100%;
+    height: 100%;
+    path{
+      fill: var(--black);
+    }
+  }
+}
+
+.text{
+  font-family: var(--capsFont);
+  white-space: nowrap;
+}

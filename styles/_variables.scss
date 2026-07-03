@@ -1,0 +1,70 @@
+:root{
+  --elevation0: none;
+  --elevation1: 0 1px 1px 0 rgba(0, 0, 0, 0.07), 0 2px 1px -1px rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --elevation2: 0 2px 2px 0 rgba(0, 0, 0, 0.07), 0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  --elevation3: 0 3px 4px 0 rgba(0, 0, 0, 0.07), 0 3px 3px -2px rgba(0, 0, 0, 0.06), 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  --elevation4: 0 4px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 10px 0 rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --elevation5: 0 6px 10px 0 rgba(0, 0, 0, 0.07), 0 1px 18px 0 rgba(0, 0, 0, 0.06), 0 3px 5px -1px rgba(0, 0, 0, 0.1);
+  --elevation6: 0 8px 10px 1px rgba(0, 0, 0, 0.07), 0 3px 14px 2px rgba(0, 0, 0, 0.06), 0 5px 5px -3px rgba(0, 0, 0, 0.1);
+  --elevation7: 0 9px 12px 1px rgba(0, 0, 0, 0.07), 0 3px 16px 2px rgba(0, 0, 0, 0.06), 0 5px 6px -3px rgba(0, 0, 0, 0.1);
+  --elevation8: 0 12px 17px 2px rgba(0, 0, 0, 0.07), 0 5px 22px 4px rgba(0, 0, 0, 0.06), 0 7px 8px -4px rgba(0, 0, 0, 0.1);
+  --elevation9: 0 16px 24px 2px rgba(0, 0, 0, 0.07), 0 6px 30px 5px rgba(0, 0, 0, 0.06), 0 8px 10px -5px rgba(0, 0, 0, 0.1);
+
+  --spacing1: 0.146rem;
+  --spacing2: 0.236rem;
+  --spacing3: 0.382rem;
+  --spacing4: 0.618rem;
+  --spacing5: 1rem;
+  --spacing6: 1.618rem;
+  --spacing7: 2.618rem;
+  --spacing8: 4.235rem;
+  --spacing9: 6.854rem;
+  --spacing10: 11.089rem;
+  --spacing11: 17.942rem;
+  --spacing12: 29.03rem;
+
+  --fontSize0: 0.625rem;
+  --fontSize1: 0.8125rem;
+  --fontSize2: 1rem;
+  --fontSize3: 1.25rem;
+  --fontSize4: 1.625rem;
+  --fontSize5: 2.0625rem;
+  --fontSize6: 2.625rem;
+  --fontSize7: 4.226rem;
+  --fontSize8: 6.804rem;
+  --fontSize9: 10.95rem;
+
+  --speed1: 0.1s;
+  --speed2: 0.2s;
+  --speed3: 0.3s;
+  --speed4: 0.4s;
+  --speed5: 0.5s;
+
+  --capsFont: "Valkyrie Caps", sans-serif;
+  --monospaceFont: "Triplicate", monospace;
+  --primaryFont: "Valkyrie", sans-serif;
+
+  --curve: 0.25rem;
+
+  --black: #000000;
+  --cream: #f8f4ee;
+
+  --gray: #747674;
+  --grayLight: #d0d2d0;
+  --grayDark: #565856;
+  --offWhite: #f9f9f9;
+
+  --lineHeight: 1.6em;
+
+  --sectionInnerMaxWidth: 1400px;
+  --navHeight: 3rem;
+
+
+  --dulledImage: grayscale(0.2) sepia(0.2);
+  --normalImage: grayscale(0) sepia(0);
+
+  --copyMaxWidth: 800px;
+
+  --invalid: var(--black);
+  --valid: var(--black);
+}

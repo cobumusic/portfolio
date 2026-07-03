@@ -1,0 +1,28 @@
+a:not(.custom),
+.light a:not(.custom){
+  color: var(--black);
+  text-decoration: underline;
+
+  transition: color var(--speed1) ease-in-out, background-color var(--speed1) ease-in-out;
+
+  &:hover{
+    color: var(--cream);
+
+    background-color: var(--black);
+  }
+}
+
+
+.dark a:not(.custom){
+  color: var(--cream);
+  text-decoration: underline;
+
+  transition: color var(--speed1) ease-in-out, background-color var(--speed1) ease-in-out;
+
+  &:hover{
+    color: var(--black);
+
+    background-color: var(--cream);
+  }
+}
+

@@ -1,0 +1,55 @@
+section.projects > div{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing10);
+  align-items: center;
+
+  .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+      margin: 0;
+    }
+
+    .subtitle{
+      margin-top: var(--spacing3);
+
+      font-style: italic;
+    }
+  }
+
+  .project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    p{
+      text-align: justify;
+      hyphens: auto;
+      hyphenate-limit-chars: 8 3 3;
+      hyphenate-limit-lines: 2;
+    }
+
+    h3{
+      margin: 0;
+      margin-top: var(--spacing6);
+
+      font-family: var(--capsFont);
+    }
+
+    .subtitle{
+      margin-bottom: var(--spacing6);
+
+      font-size: var(--fontSize2);
+      font-style: italic;
+    }
+
+    .text{
+      max-width: 800px;
+    }
+  }
+}

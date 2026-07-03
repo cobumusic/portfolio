@@ -1,0 +1,70 @@
+.form{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  >*{
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+
+    transition: opacity var(--speed1) ease-in-out;
+  }
+
+
+  .errorMessage{
+    max-width: 300px;
+
+    line-height: var(--lineHeight);
+    text-align: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+  }
+
+  .successMessage{
+    max-width: 300px;
+
+    line-height: var(--lineHeight);
+    text-align: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+  }
+
+  &.error{
+    .main{
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+    .errorMessage{
+      opacity: 1;
+
+      pointer-events: all;
+    }
+  }
+
+  &.success{
+    .main{
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+    .successMessage{
+      opacity: 1;
+
+      pointer-events: all;
+    }
+  }
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing6);
+}

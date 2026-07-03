@@ -1,0 +1,113 @@
+.navbar{
+  $collapse1: 200px;
+  --fg: var(--black);
+  --bg: var(--cream);
+
+  &.dark{
+    --fg: var(--cream);
+    --bg: var(--black);
+  }
+
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  height: var(--navHeight);
+  min-height: var(--navHeight);
+
+  background-color: var(--bg);
+
+  .navbarInner{
+    max-width: var(--sectionInnerMaxWidth);
+    height: 100%;
+    padding: 0 var(--spacing6);
+    @media (max-width: $collapse1){
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  .navItems{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    @media (max-width: $collapse1){
+      position: fixed;
+      top: 0;
+      left: 100%;
+
+      flex-direction: column;
+      width: 100%;
+      height: calc(100vh);
+    }
+  }
+
+  .close{
+    display: none;
+    justify-content: center;
+    height: var(--navHeight);
+    min-height: var(--navHeight);
+    padding: 0 var(--spacing5);
+
+
+    background-color: var(--fg);
+
+    pointer-events: none;
+    @media (max-width: $collapse1){
+      display: flex;
+
+      background-color: var(--bg);
+
+      pointer-events: all;
+    }
+  }
+
+  .navItem{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 var(--spacing5);
+
+    color: var(--fg);
+    font-weight: 400;
+    font-size: var(--fontSize3);
+    font-family: var(--capsFont);
+    text-decoration: none;
+
+    background-color: var(--bg);
+
+    transition: color var(--speed1) ease-in-out, background-color var(--speed1) ease-in-out;
+
+    user-select: none;
+    @media (max-width: $collapse1){
+      &:not(:first-child){
+        border-top: 1px solid var(--gray);
+      }
+    }
+
+    &:hover{
+      color: var(--bg);
+
+      background-color: var(--fg);
+    }
+  }
+
+  .burger{
+    display: none;
+
+    background-color: transparent;
+    border: none;
+    @media (max-width: $collapse1){
+      display: block;
+    }
+
+    path{
+      fill: var(--fg);
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.imageCard{
+  --fg: var(--cream);
+  --bg: var(--black);
+  --imageGradient: linear-gradient(#00000000 50%, #00000044 100%);
+  &.dark{
+    --fg: var(--black);
+    --bg: var(--cream);
+    --imageGradient: linear-gradient(#f8f4ee00 50%, #f8f4ee11 100%);
+  }
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  font-weight: inherit;
+  text-decoration: inherit;
+
+  border-radius: var(--curve);
+  box-shadow: none;
+
+  transition: box-shadow var(--speed1) ease-in-out;
+
+
+  user-select: none;
+
+  .image{
+    position: relative;
+
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 14rem;
+    max-height: 100%;
+    overflow: hidden;
+
+    border: var(--borderWidth) solid var(--fg);
+    .imageInner{
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+
+        filter: var(--dulledImage);
+
+        transition: filter 0.1s ease-in-out, transform 0.1s ease-in-out;
+      }
+    }
+
+    .tag{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+
+      padding: var(--spacing3) var(--spacing4);
+
+      color: var(--bg);
+      font-weight: 400;
+      font-size: var(--fontSize1);
+
+      font-family: var(--capsFont);
+      text-transform: lowercase;
+
+      background-color: var(--fg);
+    }
+  }
+  .body{
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+
+    color: var(--fg);
+    font-weight: 400;
+
+    background: var(--bg);
+
+    transition: all 0.2s ease-in-out;
+
+    .inner{
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      height: 100%;
+      padding: var(--spacing7) var(--spacing6);
+
+      line-height: var(--lineHeight);
+      text-align: left;
+
+      .label{
+        /*stylelint-disable-next-line value-no-vendor-prefix*/
+        display: -webkit-box;
+
+        max-width: 100%;
+
+        margin-bottom: var(--spacing4);
+        overflow: hidden;
+
+        font-weight: 700;
+
+        font-size: var(--fontSize3);
+        text-transform: capitalize;
+      }
+
+      .children{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+    }
+  }
+}
+
+a.imageCard{
+  box-shadow: var(--elevation2);
+
+  &:hover{
+    box-shadow: var(--elevation4);
+    cursor: pointer;
+    .image img{
+      transform: scale(1.05, 1.05);
+      filter: var(--normalImage);
+    }
+  }
+}

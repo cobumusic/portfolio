@@ -1,0 +1,70 @@
+@import "styles/_variables.scss";
+@import "styles/_section.scss";
+@import "styles/_fonts.scss";
+@import "styles/_headers.scss";
+@import "styles/_article.scss";
+@import "styles/_links.scss";
+
+html{
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  font-size: 16px;
+}
+
+body{
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+
+  color: var(--black);
+  font-weight: 400;
+  font-size: var(--fontSize3);
+
+  font-family: var(--primaryFont);
+
+  background: var(--cream);
+  @media (max-width: 1000px){font-size: var(--fontSize2);}
+}
+main{
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--navHeight));
+}
+
+
+.dark,
+.dark *{
+  color: var(--cream);
+}
+.light,
+.light *{
+  color: var(--black);
+}
+
+p,
+ul,
+ol{
+  line-height: var(--lineHeight);
+
+  &:first-child{
+    margin-top: 0;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+
+*{
+  scroll-margin-top: calc(var(--navHeight) + var(--spacing6));
+  -webkit-tap-highlight-color: transparent;
+}
+
+.initialInvis{
+  visibility: hidden;
+}
+@page{
+  margin: 0;
+  size: 8.5in 11in;
+}

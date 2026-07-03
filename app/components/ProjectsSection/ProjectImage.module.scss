@@ -1,0 +1,42 @@
+.container{
+  position: relative;
+
+  width: 61vw;
+  max-width: 40rem;
+}
+
+.border{
+  --angle: 0deg;
+
+  position: absolute;
+  inset: 0;
+
+  border: 2px solid currentcolor;
+  border-radius: var(--curve);
+
+  pointer-events: none;
+  mask: conic-gradient(#000000 var(--angle), transparent 0);
+}
+
+.image{
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: var(--curve);
+
+  picture,
+  img{
+    display: flex;
+
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    border-radius: var(--curve);
+  }
+}

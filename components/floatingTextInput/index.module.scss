@@ -1,0 +1,176 @@
+.floatingTextInput{
+  --color: var(--black);
+  --accent: var(--grayDark);
+
+  position: relative;
+
+
+  &.dark{
+    --color: var(--cream);
+  }
+
+  .inputHolder{
+    position: relative;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    height: 48px;
+  }
+
+  &.multiline{
+    .inputHolder{
+      height: min-content;
+    }
+  }
+
+  .message{
+    color: var(--color);
+    font-size: var(--fontSize1);
+
+    &:not(:empty){
+      height: 1.3em;
+    }
+  }
+
+  .prefixText{
+    padding: var(--spacing6) 0 var(--spacing3) var(--spacing4);
+
+    color: var(--color);
+
+    opacity: 0;
+
+    transition: opacity var(--speed1) ease-in-out;
+  }
+
+  input.input,
+  textarea{
+    display: flex;
+    align-items: flex-end;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    padding: var(--spacing6) var(--spacing4) var(--spacing3) 0.25ch;
+
+    color: var(--color);
+
+    font-size: var(--fontSize2);
+    font-family: inherit;
+
+    background-color: transparent;
+
+    border: none;
+
+    &::placeholder{
+      /*stylelint-disable-next-line declaration-no-important*/
+      opacity: 0 !important;
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+
+  textarea{
+    min-height: 5rem;
+
+    resize: none;
+  }
+
+
+  label{
+    position: absolute;
+    top: 0;
+
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid var(--color);
+    border-radius: var(--curve);
+
+
+    transition: border-color 0.1s ease-in-out;
+
+    user-select: none;
+
+    pointer-events: none;
+
+
+    span{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding-left: var(--spacing4);
+
+      color: var(--color);
+
+
+      white-space: nowrap;
+
+      transition: height var(--speed2) ease-in-out, font-size var(--speed2) ease-in-out, font-weight var(--speed2) ease-in-out, color 0.1s ease-in-out;
+      transition-property: height, font-size, font-weight, color;
+    }
+  }
+
+  textarea ~ label{
+    height: 100%;
+  }
+
+
+  input:not(:placeholder-shown) ~ label span,
+  input:focus ~ label span,
+  textarea:not(:placeholder-shown) ~ label span,
+  textarea:focus ~ label span{
+    height: 2em;
+
+    font-weight: 700;
+
+    font-size: var(--fontSize0);
+  }
+
+  input:not(:placeholder-shown) ~ .prefixText,
+  input:focus ~ .prefixText,
+  textarea:not(:placeholder-shown) ~ .prefixText,
+  textarea:focus ~ .prefixText{
+    opacity: 1;
+  }
+
+  input:hover ~ label,
+  input:focus ~ label,
+  textarea:hover ~ label,
+  textarea:focus ~ label{
+    color: var(--accent);
+  }
+
+  input:focus ~ .suggestions:not(.hidden):not(:empty),
+  textarea:focus ~ .suggestions:not(.hidden):not(:empty){
+    display: block;
+  }
+
+
+  &.valid{
+    --color: var(--valid);
+  }
+  &.invalid{
+    --color: var(--invalid);
+  }
+
+  &.dark{
+    &.valid{
+      --color: var(--valid);
+    }
+    &.invalid{
+      --color: var(--invalid);
+    }
+  }
+}
+

@@ -1,0 +1,10 @@
+<svg version="1.1" viewBox="0 0 562.88 4.521" height="17.084" width="2127.429" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+  <path class="initialInvis line" fill="none" stroke="#000" stroke-width=".265" stroke-linejoin="round" stroke-dasharray="none" stroke-opacity="1" stroke-linecap="round" d="M 290.80878,2.2600445 L 562.94275,2.2592142" />
+  <path class="initialInvis diamond1" fill="#000" fill-opacity="1" stroke="none" stroke-width=".337" stroke-linejoin="round" stroke-dasharray="none" stroke-opacity="1" stroke-linecap="round" d="M 281.46316,3.4885228 L 279.47543,2.2600405 L 281.46314,1.0315585 L 283.45086,2.2600405 Z" />
+  <path class="initialInvis diamond2" opacity="1" stop-opacity="1" stroke-width="2.189" stroke-linecap="round" d="M 281.46603,0 L 277.806,2.2586812 L 281.46603,4.5207244 L 285.12606,2.2586812 Z M 281.46603,0.2924188 L 284.6475,2.2586812 L 281.46603,4.2249447 L 278.28456,2.2586812 Z" />
+  <circle class="initialInvis circleBig" cx="286.923" cy="2.26" r=".809" fill="#000" fill-opacity="1" stroke="none" stroke-width=".283" stroke-linejoin="round" stroke-dasharray="none" stroke-opacity="1" stroke-linecap="round" />
+  <circle class="initialInvis circleSmall" cx="289.042" cy="2.26" r=".5" fill="#000" fill-opacity="1" stroke="none" stroke-width=".175" stroke-linejoin="round" stroke-dasharray="none" stroke-opacity="1" stroke-linecap="round" />
+  <path class="initialInvis line" fill="none" stroke="#000" stroke-width=".265" stroke-linejoin="round" stroke-dasharray="none" stroke-opacity="1" stroke-linecap="round" d="M 272.1204,2.2603582 L -0.01357102,2.2611885" />
+  <circle class="initialInvis circleBig" cx="-276.006" cy="-2.26" r=".809" fill="#000" fill-opacity="1" stroke="none" stroke-width=".283" stroke-linejoin="round" stroke-dasharray="none" stroke-opacity="1" transform="scale(-1)" stroke-linecap="round" />
+  <circle class="initialInvis circleSmall" cx="-273.887" cy="-2.26" r=".5" fill="#000" fill-opacity="1" stroke="none" stroke-width=".175" stroke-linejoin="round" stroke-dasharray="none" stroke-opacity="1" transform="scale(-1)" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,173 @@
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  @media print{
+    display: block;
+    width: auto;
+    height: auto;
+
+    .resume{
+      border: none;
+    }
+  }
+
+  .resume{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 8.5in;
+    min-width: 8.5in;
+    height: 11in;
+    margin: 0;
+    padding: 0;
+
+    font-size: var(--fontSize1);
+
+    line-height: 1.3em;
+
+    border: 1px solid red;
+    @media print{border: none;}
+
+    .header{
+      display: flex;
+      flex-direction: column;
+      padding: var(--spacing7) var(--spacing8) var(--spacing6) var(--spacing8);
+
+      color: var(--cream);
+      text-align: center;
+
+      background-color: var(--black);
+
+      .name{
+        margin: 0;
+
+        color: var(--cream);
+        font-size: var(--fontSize5);
+        font-family: var(--primaryFont);
+        line-height: 1.3em;
+      }
+
+      .title{
+        margin: var(--spacing2) 0 0 0;
+
+        font-size: var(--fontSize2);
+        font-family: var(--capsFont);
+      }
+
+      .links{
+        display: flex;
+        gap: var(--spacing3);
+        align-self: stretch;
+        justify-content: center;
+        margin-top: var(--spacing5);
+
+
+        a{
+          color: var(--cream);
+          font-size: var(--fontSize1);
+          text-decoration: none;
+        }
+      }
+    }
+
+    .atsText{
+      margin: 0;
+
+      color: var(--cream);
+
+      font-size: 0.1px;
+    }
+    .jobs{
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing6);
+      padding: var(--spacing6) var(--spacing8);
+
+      .job{
+        .title{
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          margin: 0;
+
+          font-size: var(--fontSize1);
+          font-family: var(--capsFont);
+          line-height: 1em;
+          letter-spacing: 0;
+        }
+        .date{
+          margin-left: var(--spacing4);
+
+          font-size: var(--fontSize0);
+        }
+
+        .tenure{
+          display: flex;
+          align-items: baseline;
+          margin-top: var(--spacing2);
+          margin-bottom: var(--spacing3);
+
+          font-size: var(--fontSize2);
+        }
+
+        ul{
+          margin: 0;
+        }
+      }
+    }
+
+    hr{
+      box-sizing: border-box;
+      height: 1px;
+      min-height: 1px;
+      margin: 0 var(--spacing8);
+
+      background-color: var(--black);
+      border: none;
+    }
+
+    .ats{
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing5);
+      padding: var(--spacing6) var(--spacing8) var(--spacing7) var(--spacing8);
+
+
+      font-size: var(--fontSize0);
+      text-align: center;
+
+
+      .row{
+        display: flex;
+        gap: var(--spacing9);
+        justify-content: center;
+      }
+
+      section{
+        display: flex;
+        flex-direction: column;
+      }
+
+      .heading{
+        margin: 0 0 var(--spacing2) 0;
+
+
+        font-size: var(--fontSize0);
+        font-family: var(--capsFont);
+      }
+
+      .keywords{
+        font-size: calc(var(--fontSize1) / 1.618);
+        line-height: 1.3em;
+      }
+      p{
+        margin: 0;
+      }
+    }
+  }
+}

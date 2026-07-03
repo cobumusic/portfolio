@@ -1,0 +1,27 @@
+section{
+  display: flex;
+  justify-content: center;
+
+  &.dark{
+    background-color: var(--black);
+  }
+}
+
+.sectionInner{
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--sectionInnerMaxWidth);
+  padding: var(--spacing9) var(--spacing8);
+  @media (max-width: 800px){
+    padding: var(--spacing8) var(--spacing7);
+  }
+  @media (max-width: 600px){
+    padding: var(--spacing7) var(--spacing6);
+  }
+  @media (max-width: 400px){
+    padding: var(--spacing7) var(--spacing5);
+  }
+  @media (max-width: 500px){
+    padding: var(--spacing7) var(--spacing4);
+  }
+}

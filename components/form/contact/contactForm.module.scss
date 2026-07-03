@@ -1,0 +1,9 @@
+.form{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing5);
+  width: 100%;
+}
+.h3{
+  margin: 0;
+}
