@@ -76,7 +76,7 @@ export default function ResumeSection() {
 
         <ResumeEntry
           title="Web Developer"
-          subtitle="iDobi Network · 2021 — 2022"
+          subtitle="idobi Network · 2021 — 2022"
           techs={[
             { icon: <JavaScriptSvg />, text: "JavaScript" },
             { icon: <ReactSvg />, text: "React" },
