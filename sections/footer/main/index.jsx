@@ -51,7 +51,7 @@ export default function Footer() {
         threshold={0.5}
       >
         <div className={`initialInvis ${css.row}`}>
-          <span>Jacob Ugalde · Los Angeles, CA · US Citizen</span>
+          <span>Jacob Ugalde · Los Angeles, CA</span>
         </div>
         <div className={`initialInvis ${css.row}`}>
           <Button
